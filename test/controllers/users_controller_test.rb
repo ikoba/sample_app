@@ -6,4 +6,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "form class" do
+    get signup_path
+    assert_select 'form[action="/signup"]'
+  end
 end
